@@ -21,7 +21,7 @@ print(companies)
 companies.sort(key=lambda company: company[2], reverse=True)
 print(f'Sort Using LE - {companies}')
 
-# sorted() function : its return new soeted list from the original list
+# sorted() function : its return new sorted list from the original list
 
 guests = ['James', 'Mary', 'John', 'Patricia', 'Robert', 'Jennifer']
 sorted_guests = sorted(guests)

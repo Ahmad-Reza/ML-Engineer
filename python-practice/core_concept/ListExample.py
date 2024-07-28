@@ -30,7 +30,3 @@ print(numbers)
 
 numbers.remove(9)
 print(f'Numbers after remove 9 - {numbers}')
-
-
-
-

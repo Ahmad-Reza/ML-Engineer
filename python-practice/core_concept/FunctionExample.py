@@ -3,7 +3,7 @@ def greet():
     """ Display a greeting to users """
     print('Hi, Good Morning') 
 
-def  sum(a, b):
+def sum(a, b):
     return a + b
 
 # Function call

@@ -28,6 +28,7 @@ while index < len(basket) :
     fruit = basket[index]
     if (fruit['fruit'] == fruit_name) :
         print(f"The basket has {fruit['qty']} {fruit_name}(s)")
+        break
 
     index += 1
 else :

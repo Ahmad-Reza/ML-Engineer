@@ -41,3 +41,34 @@ def sum(number) :
 
 result3 = sum(number=100)
 print(f'Sum of 100 is = {result3}')
+
+# Closures
+# A nested function references a value of its enclosing function and then
+# the enclosing function returns the nested function.
+
+def get_multiplier(a):
+    def out(b):
+        return a * b
+    return out
+
+multiply_by_3 = get_multiplier(3)
+print(multiply_by_3(10))
+
+# If multiple nested functions within enclosing function reference the same value, that value gets shared.
+# To dynamically access function's first free variable use 
+# '<function>.__closure__[0].cell_contents'.
+
+# Scope
+# If variable is being assigned to anywhere in the scope, 
+# it is regarded as a local variable, unless it is declared as a 'global' or a 'nonlocal'.
+
+def get_counter():
+    i = 0
+    def out():
+        nonlocal i
+        i += 1
+        return i
+    return out
+
+counter = get_counter()
+print(f'{counter()}, {counter()}, {counter()}')

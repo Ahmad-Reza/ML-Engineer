@@ -2,8 +2,7 @@
 
 # 1. Brute force technique.
 def setZeroes(matrix: list[list[int]]) -> None :
-    
-    # find the zeroes and update their entire row and column 0 in the matrix.
+    # find the zeroes and update their entire row and column -1 in the matrix.
     for rowIndex, row in enumerate(matrix):
         for colIndex, element in enumerate(row):
                 if element == 0:
@@ -14,9 +13,11 @@ def setZeroes(matrix: list[list[int]]) -> None :
         for colIndex in range(len(matrix[rowIndex])):
             if matrix[rowIndex][colIndex] == -1:
                 matrix[rowIndex][colIndex] = 0
+     
+    # final result            
+    print(f'result - {matrix}')
                 
-    print(matrix)
-                
+# function to mark element to be zero in final step
 def markRowColumnForZero(rowIndex: int, colIndex: int,  matrix: list[list[int]]) -> None:
     for index, element in enumerate(matrix[rowIndex]):
         if element != 0:
@@ -26,9 +27,9 @@ def markRowColumnForZero(rowIndex: int, colIndex: int,  matrix: list[list[int]])
         if element[index] != 0:
            matrix[index][colIndex] = -1
                 
-            
-matrix = [[1, 1, 1],
-          [1, 0, 1],
-          [1, 1, 1]]
+
+matrix = [[1, 1, 1, 1],
+          [1, 0, 1, 0],
+          [1, 1, 1, 1]]
 
 setZeroes(matrix)

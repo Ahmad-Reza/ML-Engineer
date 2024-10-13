@@ -4,16 +4,16 @@ import sys
 # which has the largest sum and returns its sum and prints the subarray.
 
 def max__subarray_number(arr: list[int])-> int:
-    current_sum = 0
     max_sum = -sys.maxsize - 1
     
     for i in range(len(arr)):
-        current_sum = 0
-        for j in range(i, len(arr)):
-            current_sum += arr[j]
-            
-            if current_sum > max_sum:
-                max_sum = current_sum
+        current_sum += arr[i]
+        
+        if current_sum > max_sum:
+            max_sum = current_sum
+       
+        if current_sum < 0:
+            current_sum = 0    
             
     return max_sum
 
